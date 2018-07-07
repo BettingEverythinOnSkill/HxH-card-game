@@ -1,0 +1,25 @@
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+public class Make_card_active : MonoBehaviour, ISelectHandler
+{
+
+
+	public void OnSelect(BaseEventData baseEventData)
+    {
+        Active.active_card = this.transform;
+    }
+
+	void Update()
+    {
+        
+        if (Active.active_card == this.transform && Active.active_zone != null)
+        {
+            this.transform.SetParent(Active.active_zone);
+            Active.active_zone = null;
+            Active.active_card = null;
+        }
+    }
+}
