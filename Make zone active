@@ -1,0 +1,12 @@
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
+public class Make_Zone_Active : MonoBehaviour, ISelectHandler
+{
+    public void OnSelect(BaseEventData baseEventData)
+    {
+        Active.active_zone = this.transform;
+    }
+}
